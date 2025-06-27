@@ -160,3 +160,9 @@ input[type="radio"]{
    background-color: #bd301d;
    border: 2px solid #bd301d;
 }
+
+@media (max-width: 400px) {
+   .meme-modal {
+      max-width: 100%;
+   }
+}
