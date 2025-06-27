@@ -22,7 +22,7 @@ function highlightCheckedOption(e){
 }
 
 function closeModal(){
-    memeModal.style.display = 'none'
+  memeModal.style.display = 'none'
 }
 
 function renderCat(){
@@ -49,7 +49,8 @@ function getSingleCatObject(){
   }
 }
 
-function getMatchingCatsArray(){     
+function getMatchingCatsArray(){
+
   if(document.querySelector('input[type="radio"]:checked')){
     const selectedEmotion = document.querySelector('input[type="radio"]:checked').value
     const isGif = gifsOnlyOption.checked
@@ -63,8 +64,8 @@ function getMatchingCatsArray(){
           return cat.emotionTags.includes(selectedEmotion)
       }            
     })
-    return matchingCatsArray 
-  }  
+    return matchingCatsArray
+  }
 }
 
 function getEmotionsArray(cats){
@@ -80,7 +81,6 @@ function getEmotionsArray(cats){
 }
 
 function renderEmotionsRadios(cats){
-        
   let radioItems = ``
   const emotions = getEmotionsArray(cats)
   for (let emotion of emotions){
