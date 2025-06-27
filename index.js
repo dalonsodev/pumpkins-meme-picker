@@ -6,12 +6,27 @@ const gifsOnlyOption = document.getElementById('gifs-only-option')
 const memeModalInner = document.getElementById('meme-modal-inner')
 const memeModal = document.getElementById('meme-modal')
 const memeModalCloseBtn = document.getElementById('meme-modal-close-btn')
+const controlsContainer = document.getElementById('controls-container')
 
 emotionRadios.addEventListener('change', highlightCheckedOption)
 
 memeModalCloseBtn.addEventListener('click', closeModal)
 
 getImageBtn.addEventListener('click', renderCat)
+
+// Stretch goal: clic outside the modal to close it
+document.addEventListener('click', function(e){
+   if (!memeModal.contains(e.target) && !controlsContainer.contains(e.target)) {
+      closeModal()
+   }
+})
+
+// Stretch goal: press 'escape' to close modal
+document.addEventListener('keydown', function(e){
+   if (e.key === 'Escape' && memeModal.style.display === 'flex') {
+      closeModal()
+   }
+})
 
 function highlightCheckedOption(e){
    const radios = document.getElementsByClassName('radio')
